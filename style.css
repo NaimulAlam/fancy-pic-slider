@@ -1,3 +1,9 @@
+body{
+  background-color: whitesmoke;
+  font-family: 'Roboto', sans-serif;
+  color: #291035;
+}
+
 #sliders {
   height: 400px;
   width: 60%;
@@ -12,6 +18,11 @@
 
 .slider-item {
   display: none;
+}
+
+.slider-item img{
+  border: 5px solid green;
+  border-radius: 20px ;
 }
 
 .img-thumbnail {
