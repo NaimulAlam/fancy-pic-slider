@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Fancy Image Slider</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,14 +19,35 @@
 </head>
 
 <body>
-  <div class="container mt-5">
-    <h2 class="mt-2 text-center">Search Image for create slider</h2>
-    <div class="form-inline mt-3 d-flex justify-content-center">
-      <div class="input-group col-md-6 mb-2">
-        <input type="text" class="form-control" id="search" placeholder="nature">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="mx-3 navbar-brand" href="#">NAiM</a>
+    <div>
+      <div>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Images</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sliders</a>
+          </li>
+        </ul>
       </div>
-      <button type="button" id="search-btn" class="btn btn-primary mb-2">Search</button>
     </div>
+  </nav>
+  <div class="container mt-5">
+    <section>
+      <h1 class="mt-2 text-white text-center ">Search Image for create slider</h1>
+      <div class="form-inline mt-3 d-flex justify-content-center">
+        <div class="input-group col-md-6 mb-2">
+          <input type="text" class="form-control" id="search" placeholder="nature">
+        </div>
+        <button type="button" id="search-btn" class="btn btn-primary mb-2">Search</button>
+      </div>
+    </section>
+
     <section class="images">
       <div class="justify-content-around align-items-center mt-3 gallery-header mb-2">
         <h3 class="head-title text-center">Select image for create slider</h3>
@@ -35,12 +56,17 @@
         </div>
         <button id="create-slider" class="btn btn-primary px-5">Create slider</button>
       </div>
+      <!-- total selected img -->
+      <div id="images-selected" class=" img-selection my-2 text-center">
+
+      </div>
       <!-- spinner -->
       <div id="spinner" class="text-center d-none">
         <div class="spinner-border text-success" role="status">
           <span class="sr-only">Loading...</span>
         </div>
       </div>
+
       <div class="row gallery">
 
       </div>

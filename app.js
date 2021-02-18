@@ -42,7 +42,9 @@ const selectItem = (event, img) => {
     sliders.push(img);
   } else {
     sliders.splice(item, 1);
-  }
+  } 
+  //***Extraa Features Image count added
+  document.getElementById("images-selected").innerHTML = `<h3 class="py-2">Total ${sliders.length} images selected</h3>`
 }
 
 var timer
