@@ -4,6 +4,8 @@ const galleryHeader = document.querySelector('.gallery-header');
 const searchBtn = document.getElementById('search-btn');
 const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
+const imgCount = document.getElementById("img-count");
+const spinner = document.getElementById('spinner');
 
 // My api key
 const KEY = '20273981-9f61b9da0a11f73180b289e88';
@@ -25,9 +27,10 @@ const showImages = (images) => {
   images.forEach(image => {
     let div = document.createElement('div');
     div.className = 'col-lg-3 col-md-4 col-xs-6 img-item mb-2';
-    div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">`;
+    div.innerHTML = `<img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">`;
     gallery.appendChild(div);
   })
+  imgCount.innerHTML = "";
   toggleSpinner();
 }
 
@@ -42,9 +45,9 @@ const selectItem = (event, img) => {
     sliders.push(img);
   } else {
     sliders.splice(item, 1);
-  } 
+  }
   //***Extraa Features Image count added
-  document.getElementById("images-selected").innerHTML = `<h3 class="py-2">Total ${sliders.length} images selected</h3>`
+  imgCount.innerHTML = `<h3 class="py-2">Total ${sliders.length} images selected</h3>`
 }
 
 var timer
@@ -71,11 +74,11 @@ const createSlider = () => {
 
   //NaN ***Extra feature....
   if (isNaN(duration)) {
-    alert("duration entry is not a number, Please Try again")
+    alert("duration entry is not a number, Please Search again")
     location.reload()
   }
   else if (duration < 0) {
-    alert("Duration Number can not be in negetive, Please Try again")
+    alert("Duration Number can not be in negetive, Please Search again")
     location.reload()
   }
   else {
@@ -138,6 +141,5 @@ search.addEventListener("keypress", function (event) {
 
 //Spinner Added ***Extra feature....
 const toggleSpinner = () => {
-  const spinner = document.getElementById('spinner');
   spinner.classList.toggle('d-none');
 }
