@@ -65,37 +65,25 @@ const createSlider = () => {
   <span class="prev" onclick="changeItem(-1)"><i class="fas fa-chevron-left"></i></span>
   <span class="next" onclick="changeItem(1)"><i class="fas fa-chevron-right"></i></span>
   `;
-
   sliderContainer.appendChild(prevNext)
   document.querySelector('.main').style.display = 'block';
   // hide image area
   imagesArea.style.display = 'none';
-  const duration = document.getElementById('duration').value || 1000;
+  const duration = Math.abs(document.getElementById('duration').value) || 1000;
 
-  //NaN ***Extra feature....
-  if (isNaN(duration)) {
-    alert("duration entry is not a number, Please Search again")
-    location.reload()
-  }
-  else if (duration < 0) {
-    alert("Duration Number can not be in negetive, Please Search again")
-    location.reload()
-  }
-  else {
-    sliders.forEach(slide => {
-      let item = document.createElement('div')
-      item.className = "slider-item";
-      item.innerHTML = `<img class="w-100"
+  sliders.forEach(slide => {
+    let item = document.createElement('div')
+    item.className = "slider-item";
+    item.innerHTML = `<img class="w-100"
           src="${slide}"
           alt="">`;
-      sliderContainer.appendChild(item)
-    })
-    changeSlide(0)
-    timer = setInterval(function () {
-      slideIndex++;
-      changeSlide(slideIndex);
-    }, duration);
-  }
+    sliderContainer.appendChild(item)
+  })
+  changeSlide(0)
+  timer = setInterval(function () {
+    slideIndex++;
+    changeSlide(slideIndex);
+  }, duration);
 }
 
 // change slider index 
